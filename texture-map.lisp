@@ -1,0 +1,28 @@
+;;; -*- Lisp -*-
+
+(in-package "PLATFORMER")
+
+(defstruct (texture-map
+            (:conc-name "TEXTURE/"))
+  (player nil           :read-only t)
+  (crabby nil           :read-only t)
+  (outside nil          :read-only t)
+  (small-cloud nil      :read-only t)
+  (big-cloud nil        :read-only t)
+  (level-background nil :read-only t)
+  (menu-background nil  :read-only t)
+  (menu-atmosphere nil  :read-only t)
+  (menu-buttons nil     :read-only t)
+  (paused nil           :read-only t)
+  (sound nil            :read-only t)
+  (urm nil              :read-only t)
+  (volume nil           :read-only t)
+  (health-power nil     :read-only t)
+  (game-over nil        :read-only t)
+  (level-complete nil   :read-only t)
+  (potions nil          :read-only t)
+  (crates nil           :read-only t)
+  (spikes nil           :read-only t)
+  (cannon nil           :read-only t)
+  (cannonball nil       :read-only t)
+  )
