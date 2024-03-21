@@ -41,7 +41,10 @@
                  (1 nil)
                  (2 (ecase (get-row menu-button)
                       (0 (setf (get-state game) (get-level game)))
-                      (1 (sdl2:push-quit-event))
+                      (1
+                       (format t "~&Options menu unimplemented, quitting game.~%")
+                       (force-output)
+                       (sdl2:push-quit-event))
                       (2 (sdl2:push-quit-event))))))))))
 
 (defun render-menu-background! (renderer menu-background-texture)

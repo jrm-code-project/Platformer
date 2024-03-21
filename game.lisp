@@ -10,9 +10,13 @@
 (defmethod keydown ((keyhandler game) (scancode (eql :scancode-backspace))) nil)
 
 (defmethod keydown ((keyhandler game) (scancode (eql :scancode-escape)))
+  (format t "~&Escape pressed, exiting game.~%")
+  (force-output)
   (sdl2:push-quit-event))
 
 (defmethod keydown ((keyhandler game) (scancode (eql :scancode-x)))
+  (format t "~&:scancode-x pressed, exiting game.~%")
+  (force-output)
   (sdl2:push-quit-event))
 
 (defmethod mousemove ((mousehandler game) x y) nil)

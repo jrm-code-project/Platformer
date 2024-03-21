@@ -63,16 +63,16 @@
                     spikes-atlas
                     cannon-animation-atlas
                     cannonball-animation-atlas)
-  (utils:fold-left (lambda (levels tiles-list)
-                     (make-level tiles-list
-                                 player-animation-atlas
-                                 crabby-animation-atlas
-                                 potion-animation-atlas
-                                 crate-animation-atlas
-                                 spikes-atlas
-                                 cannon-animation-atlas
-                                 cannonball-animation-atlas
-                                 levels))
+  (fold-left (lambda (levels tiles-list)
+               (make-level tiles-list
+                           player-animation-atlas
+                           crabby-animation-atlas
+                           potion-animation-atlas
+                           crate-animation-atlas
+                           spikes-atlas
+                           cannon-animation-atlas
+                           cannonball-animation-atlas
+                           levels))
                    nil
                    (reverse level-tiles-list)))
 
@@ -343,9 +343,6 @@
                ))
         (shutdown-game! game)))))
 
-(defun project-directory ()
-  (parse-namestring "/mnt/c/Users/JosephMarshallC/source/repos/Platformer/"))
-
 (defun resource-directory ()
   (merge-pathnames (make-pathname :directory '(:relative "resources")) (project-directory)))
 
@@ -370,7 +367,7 @@
 (defun main-window ()
   (sdl2-ttf:init)
   (call-with-open-font
-   "/mnt/c/Windows/Fonts/Inconsolata-Regular.ttf" 40
+   (game-over-font) 40
    (lambda (font)
      (call-with-rendered-text
       font (format nil "Game Over") #xFF #xFF #xFF #xFF
